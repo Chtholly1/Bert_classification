@@ -1,17 +1,17 @@
 ## Bert分类模型
 ### 前言
-这是一个基于**AlBert(以下Bert若不特别强调都是AlBert)** 模型实现的文本分类模型，笔者把其中一些常用的效果提升的方法都进行了封装，可以一键关闭和打开。
-python环境：
-pytorch:    1.10
-transformers:   4.12.5
-numpy:  1.19.0
+这是一个基于**AlBert(以下Bert若不特别强调都是AlBert)** 模型实现的文本分类模型，笔者把其中一些常用的效果提升的方法都进行了封装，可以一键关闭和打开。  
+python环境：  
+pytorch:    1.10  
+transformers:   4.12.5  
+numpy:  1.19.0  
 
 ### 正文
-目前已有的方法：
-1.embedding对抗训练 FGM/PGD
-2.滑动平均 EMA
-3.对比学习损失函数 SCL_loss
-4.数据增强 mixup
+目前已有的方法：  
+1.embedding对抗训练 FGM/PGD  
+2.滑动平均 EMA  
+3.对比学习损失函数 SCL_loss  
+4.数据增强 mixup  
 
 #### 参考论文：
 - [Augmenting Data with Mixup for Sentence Classification](https://arxiv.org/pdf/1905.08941.pdf)(数据增强mixup)
@@ -22,15 +22,14 @@ numpy:  1.19.0
 - https://github.com/HobbitLong/SupContrast (图像分类问题的SCL_loss，我是基于这个代码进行修改的)
 
 #### 推荐超参数：
-learning_rate=2e-5 
-batch_size=16 
-max_length=256(不超过512) 
-attack_type='FGM' 
-use_EMA=True 
-use_SCL_loss=False 
-use_mixup=False 
-lr_decay = 0.5(当前epoch上dev的loss不再下降时生效)
-
+learning_rate=2e-5  
+batch_size=16  
+max_length=256(不超过512)  
+attack_type='FGM'  
+use_EMA=True  
+use_SCL_loss=False  
+use_mixup=False  
+lr_decay = 0.5(当前epoch上dev的loss不再下降时生效)  
 ps:可根据自身任务进行调整
 
 ### 训练命令
