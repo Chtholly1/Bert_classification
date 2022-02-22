@@ -22,13 +22,13 @@ numpy:  1.19.0
 - https://github.com/HobbitLong/SupContrast (图像分类问题的SCL_loss，我是基于这个代码进行修改的)
 
 #### 推荐超参数：
-learning_rate=2e-5
-batch_size=16
-max_length=256(不超过512)
-attack_type='FGM'
-use_EMA=True
-use_SCL_loss=False
-use_mixup=False
+learning_rate=2e-5 
+batch_size=16 
+max_length=256(不超过512) 
+attack_type='FGM' 
+use_EMA=True 
+use_SCL_loss=False 
+use_mixup=False 
 lr_decay = 0.5(当前epoch上dev的loss不再下降时生效)
 
 ps:可根据自身任务进行调整
